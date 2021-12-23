@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>  add_product.html  </title>
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript" type="text/javascript">
+
+        function chek() {
+            var nmm = document.getElementById("name");
+
+            if (nmm.value == []) {
+                alert("< " + nmm.value + " > Incorrect entry \n Enter name ");
+                nmm.focus();
+                nmm.select();
+                return false;
+            }
+            else
+                var nn = document.getElementById("number");
+
+            var nn1 = nn.value.search(/^[a-z or A-Z]{3}[0-9]{7}\ ?$/);
+            if (nn1 != 0) {
+                alert("< " + nn.value + " > Incorrect entry \n Please enter a number according to the form  <ddd9999999>");
+                nn.focus();
+                nn.select();
+                return false;
+            }
+            else
+
+
+                var tt = document.getElementById("type");
+
+            var tt1 = tt.value.search(/^[a-z or A-Z or 0-9]+\ ?$/);
+            if (tt1 != 0) {
+                alert("< " + tt.value + " > Incorrect entry \n Enter(Type) letters and numbers only");
+                tt.focus();
+                tt.select();
+                return false;
+            }
+            else
+
+                var dd = document.getElementById("date");
+
+            var dd1 = dd.value.search(/^[0-9][0-9][0-9][0-9]\ ?$/);
+            if (dd1 != 0) {
+                alert("< " + dd.value + " > Incorrect entry \n Enter(Manufacturing year) four positive numbers ");
+                dd.focus();
+                dd.select();
+                return false;
+            }
+            else
+
+                var pp = document.getElementById("price");
+            var pp1 = Number(pp.value);
+            var pp2 = pp.value.search(/^[0-9]+\ ?$/);
+            if (pp1 < 0 || pp1 > 10000 || pp2 != 0) {
+                alert("< " + pp.value + " > Incorrect entry \n Enter(price) between [0 --> 10000] ");
+                pp.focus();
+                pp.select();
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+/**/</script>
+</head>
+<body class="body">
+    <form  action="result.html" onsubmit="return chek();" >
+
+        <p class="first">Enter the new product information </p>
+       
+
+        <table border="1" cellpadding ="5">
+
+            <tr>
+                <td>
+                    Product name:
+                </td>
+
+                <td>
+
+                    <input type="text" id="name"  name="name"/>
+
+                </td>
+                <td>
+                    Product name must be entered
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Product number:
+                </td>
+                <td>
+                    <input type="text" id="number"  name="number" />
+                </td>
+                <td>Example: (Esp1234567) </td>
+            </tr>
+            <tr>
+                <td>
+                    Contry of manufacture:
+                </td>
+                <td>
+                    <select id="Selectcontry"  name="contry">
+                        <option>China</option>
+                        <option>Germany</option>
+                        <option>France</option>
+                        <option>Italia</option>
+                        <option>Spain</option>
+                        <option>Korea</option>
+                        <option>Taiwan</option>
+                        <option>USA</option>
+                        <option>Syria</option>
+                        <option>Russia</option>
+                        <option>other</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Type:</td>
+                <td>
+                    <input type="text" id="type"  name="type" />
+                </td>
+                <td>
+                    Example: (rf56DerDD4)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Manufacturing year:
+                </td>
+                <td>
+                    <input type="text" id="date"  name="date" />
+                </td>
+                <td>
+                    Example: (2012)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    The price:
+                </td>
+                <td>
+                    <input type="text" id="price"  name="price" />
+               
+                </td>
+                <td>
+                    Enter  between (0  to  10000)
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+
+                    <input type="submit" value="Send data "  class="button-m"  />
+                </td>
+                <td>
+                    <input id="Reset1" type="reset" class="button-m"  value="Reset values" />
+                </td>
+                <td>
+                    <a href="index.html" class="button-m" >Home</a>
+                </td>
+
+
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
